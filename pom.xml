@@ -14,9 +14,10 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
-        <module>InventoryManagement</module>
         <module>OrderPlacement</module>
         <module>UserManagement</module>
+        <module>DiscoveryServer</module>
+        <module>APIGateway</module>
     </modules>
 
     <properties>
