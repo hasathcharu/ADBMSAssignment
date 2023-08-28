@@ -5,9 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0926db37-0425-48ae-b6c3-8748cd66dd11" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/OrderPlacement/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/config/WebClientConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/controller/OrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/dto/OrderItemDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/dto/OrderItemResponseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/dto/OrderRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/dto/OrderResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/dto/OrdersResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/model/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/model/OrderItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/repository/OrderRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APIGateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/APIGateway/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderPlacement/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/OrderPlacement/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderPlacement/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/OrderPlacement/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +51,10 @@
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -51,17 +70,63 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.lookFeel",
+    "spring.configuration.checksum": "af1d68fe97eab7cb772c261d2e52d8f3",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="OrderPlacementApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="OrderPlacement" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="org.adbms.OrderPlacementApplication" />
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.adbms.orderplacement.dto" />
+      <recent name="org.adbms.apigateway" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.APIGatewayApplication">
+    <configuration name="APIGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="APIGateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.adbms.apigateway.APIGatewayApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="EurekaServer" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="DiscoveryServer" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.adbms.eurekaserver.EurekaServer" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderPlacementApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="OrderPlacement" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.adbms.orderplacement.OrderPlacementApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.adbms.orderplacement.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserManagementApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="UserManagement" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.adbms.usermanagement.UserManagementApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.OrderPlacementApplication" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -71,7 +136,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1693133290154</updated>
-      <workItem from="1693133291487" duration="1218000" />
+      <workItem from="1693133291487" duration="4546000" />
+      <workItem from="1693138052828" duration="6432000" />
     </task>
     <servers />
   </component>
