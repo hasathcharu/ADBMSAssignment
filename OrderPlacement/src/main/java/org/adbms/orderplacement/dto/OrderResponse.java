@@ -2,8 +2,10 @@ package org.adbms.orderplacement.dto;
 
 import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.adbms.orderplacement.model.OrderStatus;
 
 import java.util.Date;
 import java.util.List;
@@ -11,6 +13,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class OrderResponse {
 
     private Long userId;
@@ -18,6 +21,7 @@ public class OrderResponse {
     private String userAddress;
     private Date date;
     private String orderNumber;
+    private OrderStatus status;
     private List<OrderItemResponseDTO> orderItems;
 
 }

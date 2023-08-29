@@ -18,7 +18,7 @@ public class OrderController {
     @ResponseStatus(HttpStatus.CREATED)
     public String placeOrder(@RequestBody OrderRequest orderRequest){
         orderService.placeOrder(orderRequest);
-        return "Order Placed Successfully";
+        return "Success";
     }
 
     @GetMapping("/{orderNumber}")
@@ -34,8 +34,15 @@ public class OrderController {
 
     @DeleteMapping("/{orderNumber}")
     @ResponseStatus(HttpStatus.ACCEPTED)
-    public String deleteOrder(@PathVariable String orderNumber){
+    public String cancelOrder(@PathVariable String orderNumber){
         orderService.cancelOrder(orderNumber);
-        return "Deleted";
+        return "Success";
+    }
+
+    @PutMapping("/{orderNumber}/{status}")
+    @ResponseStatus(HttpStatus.OK)
+    public String updateStatus(@PathVariable String orderNumber, @PathVariable String status){
+        orderService.updateStatus(orderNumber, status);
+        return "Success";
     }
 }

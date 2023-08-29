@@ -5,24 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0926db37-0425-48ae-b6c3-8748cd66dd11" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/config/WebClientConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/controller/OrderController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/dto/OrderItemDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/dto/OrderItemResponseDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/dto/OrderRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/dto/OrderResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/dto/OrdersResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/model/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/model/OrderItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/repository/OrderRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/service/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/dto/ErrorDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/exception/RestException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/model/OrderStatus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/APIGateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/APIGateway/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderPlacement/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/OrderPlacement/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderPlacement/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/OrderPlacement/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/dto/OrderItemDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/dto/OrderItemDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/dto/OrderItemResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/dto/OrderItemResponseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/dto/OrderResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/dto/OrderResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/model/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/service/OrderService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +81,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.APIGatewayApplication">
+  <component name="RunManager" selected="Spring Boot.OrderPlacementApplication">
     <configuration name="APIGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="APIGateway" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.adbms.apigateway.APIGatewayApplication" />
@@ -137,7 +131,7 @@
       <option name="presentableId" value="Default" />
       <updated>1693133290154</updated>
       <workItem from="1693133291487" duration="4546000" />
-      <workItem from="1693138052828" duration="6432000" />
+      <workItem from="1693138052828" duration="12993000" />
     </task>
     <servers />
   </component>

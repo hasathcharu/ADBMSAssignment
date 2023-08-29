@@ -25,7 +25,8 @@ public class Order {
     private Date date;
     @Column(unique = true)
     private String orderNumber;
-
+    @Enumerated(value=EnumType.STRING)
+    private OrderStatus status;
     @OneToMany(cascade = CascadeType.ALL)
     private List<OrderItem> orderItems;
 }
