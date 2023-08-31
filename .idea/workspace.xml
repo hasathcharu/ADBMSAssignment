@@ -5,18 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0926db37-0425-48ae-b6c3-8748cd66dd11" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/dto/ErrorDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/exception/RestException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/model/OrderStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserManagement/src/main/java/org/adbms/usermanagement/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserManagement/src/main/java/org/adbms/usermanagement/dto/NewUserDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserManagement/src/main/java/org/adbms/usermanagement/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserManagement/src/main/java/org/adbms/usermanagement/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserManagement/src/main/java/org/adbms/usermanagement/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserManagement/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/APIGateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/APIGateway/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/dto/OrderItemDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/dto/OrderItemDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/dto/OrderItemResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/dto/OrderItemResponseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/dto/OrderResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/dto/OrderResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/model/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/service/OrderService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +23,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -55,6 +53,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "haritha",
     "jdk.selected.JAVA_MODULE": "openjdk-17",
+    "last_opened_file_path": "D:/Rashmi Sandamini/ADBMS/UserManagement/src/main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -64,11 +63,14 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.lookFeel",
-    "spring.configuration.checksum": "af1d68fe97eab7cb772c261d2e52d8f3",
+    "spring.configuration.checksum": "011a9f1c6b8cb6570999bc677bc38192",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Rashmi Sandamini\ADBMS\UserManagement\src\main" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="org.adbms.orderplacement.dto" />
       <recent name="org.adbms.apigateway" />
@@ -81,7 +83,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.OrderPlacementApplication">
+  <component name="RunManager" selected="Spring Boot.UserManagementApplication">
     <configuration name="APIGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="APIGateway" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.adbms.apigateway.APIGatewayApplication" />
@@ -132,11 +134,24 @@
       <updated>1693133290154</updated>
       <workItem from="1693133291487" duration="4546000" />
       <workItem from="1693138052828" duration="12993000" />
+      <workItem from="1693382871926" duration="5575000" />
+      <workItem from="1693494589449" duration="2754000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
