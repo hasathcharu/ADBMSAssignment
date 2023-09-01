@@ -10,13 +10,11 @@ import org.adbms.orderplacement.repository.OrderRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
-import java.util.Optional;
-import java.util.Random;
+import java.util.*;
 
 @Service
 @RequiredArgsConstructor
@@ -24,16 +22,34 @@ import java.util.Random;
 public class OrderService {
 
     private final OrderRepository orderRepository;
+
+    private final WebClient.Builder webClientBuilder;
     public void placeOrder(OrderRequest orderRequest)  {
 
         Order order = new Order();
 
         //get from user management
-        order.setUserId(orderRequest.getUserId());
-        order.setUserName("Haritha");
-        order.setUserAddress("Colombo");
-
-
+        UserDetailsDTO userDetails = webClientBuilder.build()
+                .get()
+                .uri("http://UserManagement/api/user/"+orderRequest.getUserEmail())
+                .retrieve()
+                .bodyToMono(UserDetailsDTO.class)
+                .onErrorResume(e -> {
+                    if(e.getMessage().contains("404")){
+                        throw new RestException(HttpStatus.NOT_FOUND, "User not found");
+                    }
+                    else{
+                        throw new RestException(HttpStatus.INTERNAL_SERVER_ERROR, "Error connecting to user management");
+                    }
+                })
+                .block();
+        if(userDetails == null){
+            throw new RestException(HttpStatus.NOT_FOUND, "User not found");
+        }
+        order.setUserEmail(userDetails.getEmail());
+        order.setUserName(userDetails.getName());
+        order.setUserAddress(userDetails.getAddress());
+        order.setUserTelephone(userDetails.getTelephone());
 
         //confirm quantity availability and get prices from inventory management
 
@@ -104,9 +120,10 @@ public class OrderService {
         return OrderResponse.builder()
                 .orderNumber(order.getOrderNumber())
                 .date(order.getDate())
-                .userId(order.getUserId())
+                .userEmail(order.getUserEmail())
                 .userName(order.getUserName())
                 .userAddress(order.getUserAddress())
+                .userTelephone(order.getUserTelephone())
                 .orderItems(order.getOrderItems().stream().map(this:: mapToOrderItemsDTO).toList())
                 .status(order.getStatus())
                 .build();
@@ -128,7 +145,7 @@ public class OrderService {
     }
     private String generateOrderNumber(Order order){
         String timeStamp = new SimpleDateFormat("yyyyMMddHHmm").format(order.getDate());
-        return order.getUserId().toString() + "_" + timeStamp + "_" + new Random().nextInt(1001);
+        return order.getUserEmail() + "_" + timeStamp + "_" + new Random().nextInt(1001);
     }
 
 

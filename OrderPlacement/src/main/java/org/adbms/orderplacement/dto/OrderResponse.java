@@ -16,9 +16,10 @@ import java.util.List;
 @Builder
 public class OrderResponse {
 
-    private Long userId;
+    private String userEmail;
     private String userName;
     private String userAddress;
+    private String userTelephone;
     private Date date;
     private String orderNumber;
     private OrderStatus status;
