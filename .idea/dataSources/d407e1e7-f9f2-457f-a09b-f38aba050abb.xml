@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="ADBMS Cluster">
+  <database-model serializer="dbm" dbms="MONGO" family-id="MONGO" format-version="4.49">
+    <root id="1">
+      <ServerVersion>6.0.9</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="productService"/>
+    <schema id="3" parent="1" name="rashmiService">
+      <Current>1</Current>
+      <LocalIntrospectionTimestamp>2023-09-01.03:08:33</LocalIntrospectionTimestamp>
+    </schema>
+    <schema id="4" parent="1" name="test">
+      <LocalIntrospectionTimestamp>2023-09-01.03:07:31</LocalIntrospectionTimestamp>
+    </schema>
+    <schema id="5" parent="1" name="admin"/>
+    <schema id="6" parent="1" name="local"/>
+    <table id="7" parent="3" name="product"/>
+    <table id="8" parent="3" name="user"/>
+    <column id="9" parent="7" name="_id">
+      <DasType>ObjectId|12s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="10" parent="7" name="description">
+      <DasType>String|12s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="11" parent="7" name="name">
+      <DasType>String|12s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="12" parent="7" name="price">
+      <DasType>String|12s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="13" parent="7" name="_class">
+      <DasType>String|12s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="14" parent="8" name="_id">
+      <DasType>ObjectId|12s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="15" parent="8" name="_class">
+      <DasType>String|12s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="16" parent="8" name="email">
+      <DasType>String|12s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="17" parent="8" name="name">
+      <DasType>String|12s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="18" parent="8" name="telephone">
+      <DasType>String|12s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="19" parent="8" name="address">
+      <DasType>String|12s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="20" parent="8" name="gender">
+      <DasType>String|12s</DasType>
+      <Position>2</Position>
+    </column>
+  </database-model>
+</dataSource>

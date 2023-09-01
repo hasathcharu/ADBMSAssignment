@@ -10,6 +10,8 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class OrderRequest {
+
     private Long userId;
     private List<OrderItemDTO> orderItems;
+
 }
