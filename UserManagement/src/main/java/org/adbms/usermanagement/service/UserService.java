@@ -1,21 +1,16 @@
 package org.adbms.usermanagement.service;
 
-import com.mongodb.DuplicateKeyException;
-import com.mongodb.MongoBulkWriteException;
-import com.mongodb.MongoWriteException;
 import lombok.RequiredArgsConstructor;
 import org.adbms.usermanagement.dto.NewUserDTO;
+import org.adbms.usermanagement.dto.UpdateUserDTO;
 import org.adbms.usermanagement.dto.UserDetailsDTO;
 import org.adbms.usermanagement.dto.UsersResponse;
 import org.adbms.usermanagement.exception.RestException;
 import org.adbms.usermanagement.model.User;
 import org.adbms.usermanagement.repository.UserRepository;
-import org.bson.types.ObjectId;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -87,16 +82,16 @@ public class UserService {
     }
 
 
-    public void updateUsers(NewUserDTO newUserDTO) {
-        User user = userRepository.findByEmail(newUserDTO.getEmail()).orElse(null);
+    public void updateUser(UpdateUserDTO updateUserDTO) {
+        User user = userRepository.findByEmail(updateUserDTO.getEmail()).orElse(null);
         if(user==null){
             throw new RestException(HttpStatus.NOT_FOUND, "User not found");
         }
-            user.setName(newUserDTO.getName());
-            user.setEmail(newUserDTO.getEmail());
-            user.setAddress(newUserDTO.getAddress());
-            user.setTelephone(newUserDTO.getTelephone());
-            user.setGender(newUserDTO.getGender());
-            userRepository.save(user);
+        user.setName(updateUserDTO.getName() !=null ? updateUserDTO.getName():user.getName());
+        user.setEmail(updateUserDTO.getEmail() !=null ? updateUserDTO.getEmail():user.getEmail());
+        user.setAddress(updateUserDTO.getAddress() !=null ? updateUserDTO.getAddress():user.getAddress());
+        user.setTelephone(updateUserDTO.getTelephone() !=null ? updateUserDTO.getTelephone():user.getTelephone());
+        user.setGender(updateUserDTO.getGender() !=null ? updateUserDTO.getGender():user.getGender());
+        userRepository.save(user);
     }
 }

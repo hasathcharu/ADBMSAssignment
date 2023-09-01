@@ -2,10 +2,10 @@ package org.adbms.usermanagement.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.adbms.usermanagement.dto.NewUserDTO;
+import org.adbms.usermanagement.dto.UpdateUserDTO;
 import org.adbms.usermanagement.dto.UserDetailsDTO;
 import org.adbms.usermanagement.dto.UsersResponse;
 import org.adbms.usermanagement.service.UserService;
-import org.bson.types.ObjectId;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,8 +20,9 @@ public class UserController {
     private final UserService userService;
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void createUser(@RequestBody NewUserDTO newUserDTO){
+    public String createUser(@RequestBody NewUserDTO newUserDTO){
         userService.createUser(newUserDTO);
+        return "Success";
     }
 
     @GetMapping
@@ -38,13 +39,15 @@ public class UserController {
 
     @DeleteMapping("/{email}")
     @ResponseStatus(HttpStatus.OK)
-    public void deleteUser(@PathVariable String email){
+    public String deleteUser(@PathVariable String email){
         userService.deleteUser(email);
+        return "Success";
     }
 
     @PutMapping()
     @ResponseStatus(HttpStatus.OK)
-    public void updateUser(@RequestBody NewUserDTO newUserDTO){
-        userService.updateUsers(newUserDTO);
+    public String updateUser(@RequestBody UpdateUserDTO updateUserDTO){
+        userService.updateUser(updateUserDTO);
+        return "Success";
     }
 }

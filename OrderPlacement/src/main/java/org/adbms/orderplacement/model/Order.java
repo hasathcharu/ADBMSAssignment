@@ -19,9 +19,10 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long userId;
+    private String userEmail;
     private String userName;
     private String userAddress;
+    private String userTelephone;
     private Date date;
     @Column(unique = true)
     private String orderNumber;

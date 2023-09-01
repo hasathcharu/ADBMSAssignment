@@ -5,14 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0926db37-0425-48ae-b6c3-8748cd66dd11" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/UserManagement/src/main/java/org/adbms/usermanagement/dto/ErrorDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UserManagement/src/main/java/org/adbms/usermanagement/dto/UserDetailsDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UserManagement/src/main/java/org/adbms/usermanagement/dto/UsersResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UserManagement/src/main/java/org/adbms/usermanagement/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UserManagement/src/main/java/org/adbms/usermanagement/exception/RestException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/dto/UserDetailsDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserManagement/src/main/java/org/adbms/usermanagement/dto/UpdateUserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/dto/OrderRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/dto/OrderRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/dto/OrderResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/dto/OrderResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/model/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/OrderPlacement/src/main/java/org/adbms/orderplacement/service/OrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserManagement/src/main/java/org/adbms/usermanagement/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserManagement/src/main/java/org/adbms/usermanagement/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserManagement/src/main/java/org/adbms/usermanagement/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserManagement/src/main/java/org/adbms/usermanagement/repository/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserManagement/src/main/java/org/adbms/usermanagement/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserManagement/src/main/java/org/adbms/usermanagement/service/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,34 +40,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "rashmi",
-    "jdk.selected.JAVA_MODULE": "openjdk-17",
-    "last_opened_file_path": "D:/Rashmi Sandamini/ADBMS/UserManagement/src/main/java/org/adbms/usermanagement",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "spring.configuration.checksum": "011a9f1c6b8cb6570999bc677bc38192",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;rashmi&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Rashmi Sandamini/ADBMS/UserManagement/src/main/java/org/adbms/usermanagement&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;011a9f1c6b8cb6570999bc677bc38192&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.adbms.usermanagement.dto" />
@@ -88,7 +89,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.UserManagementApplication">
+  <component name="RunManager" selected="Spring Boot.OrderPlacementApplication">
     <configuration name="APIGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="APIGateway" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.adbms.apigateway.APIGatewayApplication" />
