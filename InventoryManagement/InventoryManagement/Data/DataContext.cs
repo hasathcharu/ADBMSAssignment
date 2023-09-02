@@ -13,7 +13,7 @@ namespace InventoryManagement.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer("Server= DESKTOP-JN3625D;Database=Inventory_DB;Trusted_Connection=true;TrustServerCertificate=true;");    
+            optionsBuilder.UseSqlServer("Server=localhost;Database=inventoryService;Trusted_Connection=false;TrustServerCertificate=true;User Id=sa;Password=Haritha@123;");    
         }
 
         public DbSet<InventoryModel> Inventory { get; set; }

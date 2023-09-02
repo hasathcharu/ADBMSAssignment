@@ -1,28 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Thinkpad x1\\source\\repos\\InventoryManagement\\InventoryManagement\\InventoryManagement.csproj": {}
+    "/Users/haritha/Developer/ADBMS/InventoryManagement/InventoryManagement/InventoryManagement.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Thinkpad x1\\source\\repos\\InventoryManagement\\InventoryManagement\\InventoryManagement.csproj": {
+    "/Users/haritha/Developer/ADBMS/InventoryManagement/InventoryManagement/InventoryManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Thinkpad x1\\source\\repos\\InventoryManagement\\InventoryManagement\\InventoryManagement.csproj",
+        "projectUniqueName": "/Users/haritha/Developer/ADBMS/InventoryManagement/InventoryManagement/InventoryManagement.csproj",
         "projectName": "InventoryManagement",
-        "projectPath": "C:\\Users\\Thinkpad x1\\source\\repos\\InventoryManagement\\InventoryManagement\\InventoryManagement.csproj",
-        "packagesPath": "C:\\Users\\Thinkpad x1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Thinkpad x1\\source\\repos\\InventoryManagement\\InventoryManagement\\obj\\",
+        "projectPath": "/Users/haritha/Developer/ADBMS/InventoryManagement/InventoryManagement/InventoryManagement.csproj",
+        "packagesPath": "/Users/haritha/.nuget/packages/",
+        "outputPath": "/Users/haritha/Developer/ADBMS/InventoryManagement/InventoryManagement/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Thinkpad x1\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/haritha/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
+          "/usr/local/share/dotnet/library-packs": {},
+          "/usr/local/share/dotnet/sdk/7.0.307/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -61,7 +60,7 @@
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.2.3, )"
+              "version": "[6.5.0, )"
             }
           },
           "imports": [
@@ -83,7 +82,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.307/RuntimeIdentifierGraph.json"
         }
       }
     }
