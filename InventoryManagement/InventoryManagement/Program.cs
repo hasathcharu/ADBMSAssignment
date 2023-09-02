@@ -1,6 +1,7 @@
 global using InventoryManagement.Models;
 global using InventoryManagement.Data;
 using InventoryManagement.Services;
+using Steeltoe.Discovery.Client;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +14,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IInventoryService, InventoryServices>();
 builder.Services.AddDbContext<DataContext>();
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
+builder.Services.AddDiscoveryClient();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

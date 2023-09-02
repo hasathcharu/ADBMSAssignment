@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/haritha/Developer/ADBMS/InventoryManagement/InventoryManagement/InventoryManagement.csproj": {}
+    "/Users/haritha/Developer/ADBMSAssignment/InventoryManagement/InventoryManagement/InventoryManagement.csproj": {}
   },
   "projects": {
-    "/Users/haritha/Developer/ADBMS/InventoryManagement/InventoryManagement/InventoryManagement.csproj": {
+    "/Users/haritha/Developer/ADBMSAssignment/InventoryManagement/InventoryManagement/InventoryManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/haritha/Developer/ADBMS/InventoryManagement/InventoryManagement/InventoryManagement.csproj",
+        "projectUniqueName": "/Users/haritha/Developer/ADBMSAssignment/InventoryManagement/InventoryManagement/InventoryManagement.csproj",
         "projectName": "InventoryManagement",
-        "projectPath": "/Users/haritha/Developer/ADBMS/InventoryManagement/InventoryManagement/InventoryManagement.csproj",
+        "projectPath": "/Users/haritha/Developer/ADBMSAssignment/InventoryManagement/InventoryManagement/InventoryManagement.csproj",
         "packagesPath": "/Users/haritha/.nuget/packages/",
-        "outputPath": "/Users/haritha/Developer/ADBMS/InventoryManagement/InventoryManagement/obj/",
+        "outputPath": "/Users/haritha/Developer/ADBMSAssignment/InventoryManagement/InventoryManagement/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/haritha/.nuget/NuGet/NuGet.Config"
@@ -58,9 +58,21 @@
               "target": "Package",
               "version": "[7.0.10, )"
             },
+            "Steeltoe.Common.Hosting": {
+              "target": "Package",
+              "version": "[3.2.4, )"
+            },
+            "Steeltoe.Discovery.Eureka": {
+              "target": "Package",
+              "version": "[3.2.4, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.5.0, )"
+            },
+            "Yarp.ReverseProxy": {
+              "target": "Package",
+              "version": "[2.0.1, )"
             }
           },
           "imports": [
