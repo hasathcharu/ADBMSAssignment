@@ -60,12 +60,23 @@ namespace InventoryManagement.Services
             {
                 return false;
             }
+            if (request.Product_Name is not null)
+            {
+                product.Product_Name = request.Product_Name;
+            }
+            if(request.Product_Brand is not null)
+            {
+                product.Product_Brand = request.Product_Brand;
+            }
+            if(request.Price is not null)
+            {
+                product.Price = request.Price;
+            }
+            if(request.Available_Quantity is not null)
+            {
+                product.Available_Quantity = request.Available_Quantity;
 
-            product.Product_Name = request.Product_Name;
-            product.Product_Brand = request.Product_Brand;
-            product.Price = request.Price;
-            product.Available_Quantity = request.Available_Quantity;
-
+            }
             await _context.SaveChangesAsync();
 
             return true;
@@ -110,7 +121,7 @@ namespace InventoryManagement.Services
                             throw new Exception("Not found");
                         }
 
-                        if (productItem.Available_Quantity > product.qty)
+                        if (productItem.Available_Quantity >= product.qty)
                         {
                             productItem.Available_Quantity -= product.qty;
                         }

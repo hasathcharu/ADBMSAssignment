@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -59,7 +60,36 @@ public class OrderService {
                 .toList();
 
         order.setOrderItems(orderItems);
-
+        List<InventoryConfirmDTO> inventoryConfirmDTOList = webClientBuilder.build()
+                .put()
+                .uri("http://InventoryManagement/api/inventory/PlaceOrder")
+                .bodyValue(orderItems.stream().map(orderItem -> InventoryConfirmDTO.builder()
+                        .pid(orderItem.getProductId())
+                        .qty(orderItem.getQuantity())
+                        .build()).toList())
+                .retrieve()
+                .bodyToFlux(InventoryConfirmDTO.class)
+                .onErrorResume(e -> {
+                    System.out.println(e.getMessage());
+                    if(e.getMessage().contains("404")){
+                        throw new RestException(HttpStatus.NOT_FOUND, "Product(s) out of stock");
+                    }
+                    else{
+                        throw new RestException(HttpStatus.INTERNAL_SERVER_ERROR, "Error connecting to inventory management");
+                    }
+                })
+                .collectList().block();
+        if(inventoryConfirmDTOList == null){
+            throw new RestException(HttpStatus.NOT_FOUND, "Product(s) out of stock");
+        }
+        //set prices
+        for(OrderItem orderItem: orderItems){
+            for(InventoryConfirmDTO inventoryConfirmDTO: inventoryConfirmDTOList){
+                if(orderItem.getProductId() == inventoryConfirmDTO.getPid()){
+                    orderItem.setPrice(inventoryConfirmDTO.getPrice());
+                }
+            }
+        }
 //        if(false){
 //            throw new RestException(HttpStatus.NOT_FOUND, "Product(s) out of stock");
 //        }
@@ -96,6 +126,23 @@ public class OrderService {
         }
         order.get().setStatus(OrderStatus.CANCELLED);
         //send details to inventory management to add back the quantities
+        String inventoryConfirmation = webClientBuilder.build()
+                .put()
+                .uri("http://InventoryManagement/api/inventory/CancelOrder")
+                .bodyValue(order.get().getOrderItems().stream().map(orderItem -> InventoryConfirmDTO.builder()
+                        .pid(orderItem.getProductId())
+                        .qty(orderItem.getQuantity())
+                        .build()).toList())
+                .retrieve()
+                .bodyToMono(String.class)
+                .onErrorResume(e -> {
+                    System.out.println(e.getMessage());
+                    throw new RestException(HttpStatus.INTERNAL_SERVER_ERROR, "Error connecting to inventory management");
+                })
+                .block();
+        if(inventoryConfirmation == null){
+            throw new RestException(HttpStatus.INTERNAL_SERVER_ERROR, "Error connecting to inventory management");
+        }
         orderRepository.save(order.get());
     }
     public void updateStatus(String orderNumber, String status) {
@@ -126,15 +173,23 @@ public class OrderService {
                 .userTelephone(order.getUserTelephone())
                 .orderItems(order.getOrderItems().stream().map(this:: mapToOrderItemsDTO).toList())
                 .status(order.getStatus())
+                .total(calculateOrderTotal(order.getOrderItems()))
                 .build();
     }
-
+    private BigDecimal calculateOrderTotal(List<OrderItem> orderItems){
+        BigDecimal total = new BigDecimal(0);
+        for(OrderItem orderItem: orderItems){
+            total = total.add(orderItem.getPrice().multiply(new BigDecimal(orderItem.getQuantity())));
+        }
+        return total;
+    }
     private OrderItemResponseDTO mapToOrderItemsDTO(OrderItem orderItem){
         return OrderItemResponseDTO.builder()
                 .pid(orderItem.getProductId())
                 .itemId(orderItem.getItemId())
                 .qty(orderItem.getQuantity())
-                .price(orderItem.getPrice())
+                .unitPrice(orderItem.getPrice())
+                .totalPrice(orderItem.getPrice().multiply(new BigDecimal(orderItem.getQuantity())))
                 .build();
     }
     private OrderItem mapToEntity(OrderItemDTO orderItemDTO){

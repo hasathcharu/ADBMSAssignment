@@ -76,6 +76,8 @@ namespace InventoryManagement.Controllers
 
         public async Task<ActionResult<List<OrderDTO>>> PlaceOrder(List<OrderDTO> products)
         {
+            Console.WriteLine(products);
+            System.Diagnostics.Debug.WriteLine("SomeText");
             var result = await _inventoryService.PlaceOrder(products);
             if (result is null)
             {
