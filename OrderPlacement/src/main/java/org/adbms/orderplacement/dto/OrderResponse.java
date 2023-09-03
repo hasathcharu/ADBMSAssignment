@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.adbms.orderplacement.model.OrderStatus;
 
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
@@ -16,13 +17,14 @@ import java.util.List;
 @Builder
 public class OrderResponse {
 
+    private String orderNumber;
     private String userEmail;
     private String userName;
     private String userAddress;
     private String userTelephone;
     private Date date;
-    private String orderNumber;
     private OrderStatus status;
+    private BigDecimal total;
     private List<OrderItemResponseDTO> orderItems;
 
 }

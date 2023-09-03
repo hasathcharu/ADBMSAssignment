@@ -15,5 +15,6 @@ public class OrderItemResponseDTO {
     private Long itemId;
     private Long pid;
     private Integer qty;
-    private BigDecimal price;
+    private BigDecimal unitPrice;
+    private BigDecimal totalPrice;
 }

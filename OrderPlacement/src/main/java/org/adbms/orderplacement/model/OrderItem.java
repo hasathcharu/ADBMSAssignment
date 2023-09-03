@@ -17,7 +17,7 @@ import java.util.List;
 @NoArgsConstructor
 public class OrderItem {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long itemId;
 
     private Long productId;

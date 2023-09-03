@@ -2,8 +2,9 @@
 {
     public class OrderDTO
     {
-        public long PId { get; set; }
-        public double? Price { get; set; }
-        public double? Available_Quantity { get; set; }
+        public long pid { get; set; }
+        public double? price { get; set; }
+        public double? qty { get; set; }
+        public double? availableQty { get; set; }
     }
 }

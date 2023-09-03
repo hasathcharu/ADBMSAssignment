@@ -2,6 +2,7 @@
 using InventoryManagement.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using InventoryManagement.DTO;
 
 namespace InventoryManagement.Controllers
 {
@@ -24,9 +25,9 @@ namespace InventoryManagement.Controllers
 
         [HttpGet ("{PID}")]
 
-        public async Task<ActionResult<InventoryModel>> GetsingleProducts(int PID)
+        public async Task<ActionResult<InventoryModel>> GetSingleProduct(int PID)
         {
-            var result = await _inventoryService.GetsingleProducts(PID);
+            var result = await _inventoryService.GetSingleProduct(PID);
             if (result is null)
             {
                 return NotFound("Product not found");
@@ -36,58 +37,65 @@ namespace InventoryManagement.Controllers
 
         [HttpPost]
 
-        public async Task<ActionResult<List<InventoryModel>>> AddProduct(InventoryModel product)
+        public async Task<ActionResult> AddProduct(InventoryModel product)
         {
             var result = await _inventoryService.AddProduct(product);
-            return Ok(result);
+            if (result == true)
+            {
+                return Ok("Success");
+            }
+            return StatusCode(500);
         }
 
           [HttpPut("{PID}")]
 
-          public async Task<ActionResult<List<InventoryModel>>> UpdateProducts(long PID, InventoryModel request)
+          public async Task<ActionResult> UpdateProduct(long PID, InventoryModel request)
          {
-           var result = await _inventoryService.UpdateProducts(PID, request);
-           if (result is null)
+           var result = await _inventoryService.UpdateProduct(PID, request);
+           if (result is false)
            {
               return NotFound("Product not found");
            }
-           return Ok(result);
+          
+           return Ok("Success");
          }
 
-        [HttpPut("CancelOrder/{PID},{Qty}")]
+        [HttpPut("CancelOrder")]
 
-        public async Task<ActionResult<InventoryModel>> CancelOrder(long PID, int Qty)
+        public async Task<ActionResult> CancelOrder(List<OrderDTO> products)
         {
-            var result = await _inventoryService.CancelOrder(PID, Qty);
+            var result = await _inventoryService.CancelOrder(products);
+            if (result == false)
+            {
+                return StatusCode(500);
+            }
+            return Ok("Success");
+        }
+
+        [HttpPut("PlaceOrder")]
+
+        public async Task<ActionResult<List<OrderDTO>>> PlaceOrder(List<OrderDTO> products)
+        {
+            Console.WriteLine(products);
+            System.Diagnostics.Debug.WriteLine("SomeText");
+            var result = await _inventoryService.PlaceOrder(products);
             if (result is null)
             {
-                return NotFound("Product not found");
+                return NotFound("Product(s) not in stock");
             }
             return Ok(result);
         }
 
-        [HttpPut("PlaceOrder/{PID},{Qty}")]
+        [HttpDelete ("{ID}")]
 
-        public async Task<ActionResult<InventoryModel>> PlaceOrder(long PID, int Qty)
-        {
-            var result = await _inventoryService.PlaceOrder(PID, Qty);
-            if (result is null)
-            {
-                return NotFound("Product not found");
-            }
-            return Ok(result);
-        }
-
-        [HttpDelete ("{PID}")]
-
-        public async Task<ActionResult<List<InventoryModel>>> DeleteProduct( long ID)
+        public async Task<ActionResult> DeleteProduct( long ID)
         {
             var result = await _inventoryService.DeleteProduct(ID);
-            if(result is null) 
+            if(result == false) 
             {
                 return NotFound("Product not found");
             }
-            return Ok(result);
+            return Ok("Success");
         }
     }
 }
