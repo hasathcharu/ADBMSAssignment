@@ -1,6 +1,7 @@
 package org.adbms.orderplacement.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.adbms.orderplacement.dto.OrderItemResponseDTO;
 import org.adbms.orderplacement.dto.OrderRequest;
 import org.adbms.orderplacement.dto.OrderResponse;
 import org.adbms.orderplacement.dto.OrdersResponse;
@@ -16,9 +17,8 @@ public class OrderController {
     private final OrderService orderService;
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public String placeOrder(@RequestBody OrderRequest orderRequest){
-        orderService.placeOrder(orderRequest);
-        return "Success";
+    public OrderResponse placeOrder(@RequestBody OrderRequest orderRequest){
+        return orderService.placeOrder(orderRequest);
     }
 
     @GetMapping("/{orderNumber}")
