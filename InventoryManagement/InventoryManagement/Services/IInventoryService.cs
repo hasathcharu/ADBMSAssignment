@@ -4,17 +4,19 @@ namespace InventoryManagement.Services
 {
     public interface IInventoryService
     {
-        Task<List<InventoryModel>>? GetAllProducts();
+        Task<List<InventoryModel>> GetAllProducts();
 
-        Task<InventoryModel> GetsingleProducts(long PID);
+        Task<InventoryModel?> GetSingleProduct(long PID);
 
-        Task<List<InventoryModel>> AddProduct(InventoryModel product);
+       Task<Boolean> AddProduct(InventoryModel product);
 
-        Task<List<InventoryModel>>? UpdateProducts(long PID, InventoryModel request);
+        Task<Boolean> UpdateProduct(long PID, InventoryModel request);
 
-        Task<List<InventoryModel>>? DeleteProduct(long ID);
-        Task<OrderDTO> PlaceOrder(long ID, int Qty);
-        Task<InventoryModel> CancelOrder(long PID, int Qty);
+        Task<Boolean> DeleteProduct(long ID);
+
+        Task<List<OrderDTO>?> PlaceOrder(List<OrderDTO> products);
+        
+        Task<Boolean> CancelOrder(List<OrderDTO> products);
         
     }
 }

@@ -1,4 +1,5 @@
-﻿using InventoryManagement.DTO;
+﻿using System.Transactions;
+using InventoryManagement.DTO;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -15,25 +16,23 @@ namespace InventoryManagement.Services
             _context = context;
         }
 
-        public async Task<List<InventoryModel>> AddProduct(InventoryModel product)
+        public async Task<Boolean> AddProduct(InventoryModel product)
         {
-            var products = await _context.Inventory.ToListAsync();
             _context.Inventory.Add(product);
             await _context.SaveChangesAsync();
-            return products;
+            return true;
         }
 
-        public async Task<List<InventoryModel>> DeleteProduct(long ID)
+        public async Task<Boolean> DeleteProduct(long ID)
         {
-            var products = await _context.Inventory.ToListAsync();
             var product = await _context.Inventory.FindAsync(ID);
             if (product == null)
             {
-                return null;
+                return false;
             }
             _context.Inventory.Remove(product);
             await _context.SaveChangesAsync();
-            return products;
+            return true;
         }
 
         public async Task<List<InventoryModel>> GetAllProducts()
@@ -42,7 +41,7 @@ namespace InventoryManagement.Services
             return products;
         }
 
-        public async Task<InventoryModel> GetsingleProducts(long PId)
+        public async Task<InventoryModel?> GetSingleProduct(long PId)
         {
             var product = await _context.Inventory.FindAsync(PId);
 
@@ -53,14 +52,13 @@ namespace InventoryManagement.Services
             return product;
         }
 
-        public async Task<List<InventoryModel>> UpdateProducts(long PId, InventoryModel request)
+        public async Task<Boolean> UpdateProduct(long PId, InventoryModel request)
         {
-            var products = await _context.Inventory.ToListAsync();
             var product = await _context.Inventory.FindAsync(PId);
 
-           if (product == null)
+            if (product == null)
             {
-                return null;
+                return false;
             }
 
             product.Product_Name = request.Product_Name;
@@ -70,47 +68,69 @@ namespace InventoryManagement.Services
 
             await _context.SaveChangesAsync();
 
+            return true;
+        }
+        public async Task<Boolean> CancelOrder(List<OrderDTO> products)
+        {
+
+            using var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
+            try
+            {
+                foreach (OrderDTO product in products)
+                {
+                    var productItem = await _context.Inventory.FindAsync(product.pid);
+                    if (productItem is not null)
+                    {
+                        productItem.Available_Quantity += product.qty;
+                    }
+                }
+                await _context.SaveChangesAsync();
+                scope.Complete();
+            }
+            catch (Exception ex)
+            {
+                scope.Dispose();
+                return false;
+            }
+            return true;
+        }
+        public async Task<List<OrderDTO>?> PlaceOrder(List<OrderDTO> products)
+        {
+
+
+            using (var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
+            {
+                try
+                {
+                    foreach (OrderDTO product in products)
+                    {
+                        var productItem = await _context.Inventory.FindAsync(product.pid);
+                        if (productItem is null)
+                        {
+                            throw new Exception("Not found");
+                        }
+
+                        if (productItem.Available_Quantity > product.qty)
+                        {
+                            productItem.Available_Quantity -= product.qty;
+                        }
+                        else
+                        {
+                            throw new Exception("Not in stock");
+                        }
+                        product.price = productItem.Price;
+                        product.availableQty = productItem.Available_Quantity;
+                    }
+                    await _context.SaveChangesAsync();
+                    scope.Complete();
+                }
+                catch (Exception ex)
+                {
+                    scope.Dispose();
+                    return null;
+                }
+            }
             return products;
-        }
-        public async Task<InventoryModel> CancelOrder(long PID, int Qty)
-        {
-
-            var product = await _context.Inventory.FindAsync(PID);
-
-            if (product == null)
-            {
-                return null;
-            }
-
-            product.Available_Quantity += Qty;
-
-            await _context.SaveChangesAsync();
-
-            return product;
-        }
-        public async Task<OrderDTO> PlaceOrder(long ID,int Qty)
-        {
-            
-            var product =await _context.Inventory.FindAsync(ID);
-            if (product == null)
-            {
-                return null;
-            }
-            var Quantity = product.Available_Quantity - Qty;
-            OrderDTO ODTO = new OrderDTO();
-            if (Quantity> 0)
-            {
-                var Newprice = product.Price*Qty;
-
-
-                ODTO.PId = ID;
-                ODTO.Price = Newprice;
-                ODTO.Available_Quantity = Quantity;
-                
-                        
-            }
-            
-            return ODTO;
         }
     }
 }
