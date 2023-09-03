@@ -25,7 +25,7 @@ public class OrderService {
     private final OrderRepository orderRepository;
 
     private final WebClient.Builder webClientBuilder;
-    public void placeOrder(OrderRequest orderRequest)  {
+    public OrderResponse placeOrder(OrderRequest orderRequest)  {
 
         Order order = new Order();
 
@@ -97,6 +97,7 @@ public class OrderService {
         order.setStatus(OrderStatus.PLACED);
         order.setOrderNumber(generateOrderNumber(order));
         this.orderRepository.save(order);
+        return mapToOrderResponse(order);
     }
 
 
