@@ -90,9 +90,6 @@ public class OrderService {
                 }
             }
         }
-//        if(false){
-//            throw new RestException(HttpStatus.NOT_FOUND, "Product(s) out of stock");
-//        }
         order.setDate(new Date());
         order.setStatus(OrderStatus.PLACED);
         order.setOrderNumber(generateOrderNumber(order));
