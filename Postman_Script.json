@@ -1,0 +1,451 @@
+{
+	"info": {
+		"_postman_id": "011ceff5-6eb9-47a9-967b-7eeec273634e",
+		"name": "ADBMS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21072257"
+	},
+	"item": [
+		{
+			"name": "OrderManagement",
+			"item": [
+				{
+					"name": "New Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userEmail\":\"haritha@hasathcharu.com\",\n    \"orderItems\":[\n        {\n            \"pid\":2,\n            \"qty\":2\n        },\n        {\n            \"pid\":9,\n            \"qty\":1\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/api/order",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Order Status",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/api/order/1_202308290928_339/completed",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"order",
+								"1_202308290928_339",
+								"completed"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel Order",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/api/order/rashmi@gmail.com_202309031059_99",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"order",
+								"rashmi@gmail.com_202309031059_99"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Orders",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/api/order",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Order",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/api/order/1_202308290906_425",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"order",
+								"1_202308290906_425"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "UserManagement",
+			"item": [
+				{
+					"name": "CreateUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Ransilu Sooriyahetti\",\n    \"email\":\"ransilu@gmail.com\",\n    \"gender\":\"male\",\n    \"telephone\":\"0833833838\",\n    \"address\":\"Colombo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/api/user",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/api/user",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/api/user/haritha@hasathcharu.com",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"user",
+								"haritha@hasathcharu.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateUser",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Rashmi Sandamini\",\n    \"email\":\"rashmi@gmail.com\",\n    \"address\": \"Padukka\"\n    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/api/user",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost/api/user/sldkjfs",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"user",
+								"sldkjfs"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "InventoryManagement",
+			"item": [
+				{
+					"name": "Get All Inventory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/api/inventory/",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"inventory",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/api/inventory/1",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"inventory",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost/api/inventory/3",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"inventory",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"product_Name\": \"MacBook Pro 14 Inch\",\n  \"product_Brand\": \"Apple\",\n  \"price\": 2000,\n  \"available_Quantity\": 20\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/api/inventory/",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"inventory",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"price\": 899\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/api/inventory/2",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"inventory",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Place Order",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n  {\n    \"pId\": 1,\n    \"qty\": 1\n  },\n  {\n    \"pId\": 2,\n    \"qty\": 1\n  }\n\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/api/inventory/PlaceOrder/",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"inventory",
+								"PlaceOrder",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CancelOrder",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n  {\n    \"pId\": 1,\n    \"qty\": 1\n  },\n  {\n    \"pId\": 3,\n    \"qty\": 1\n  }\n\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/api/inventory/CancelOrder/",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"inventory",
+								"CancelOrder",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
