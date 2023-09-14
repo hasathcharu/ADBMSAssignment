@@ -157,7 +157,7 @@ public class OrderService {
                 order.get().setStatus(OrderStatus.COMPLETED);
                 break;
             default:
-                break;
+                throw new RestException(HttpStatus.BAD_REQUEST, "Invalid Status");
         }
         orderRepository.save(order.get());
     }
